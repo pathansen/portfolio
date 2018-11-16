@@ -29,12 +29,11 @@ export class ProjectsComponent implements OnInit {
     ]
   };
 
-  private numProjects : number = this.myProjects["data"].length;
-  private numberColumns : number = 4;
-  private numberItems : number = Math.ceil(this.numProjects/this.numberColumns);
-
-  private colCollection = Array(this.numberColumns).fill(0);
-  private itemCollection = Array(this.numberItems).fill(0);
+  numProjects : number = this.myProjects["data"].length;
+  numberColumns : number = 4;
+  numberItems : number = Math.ceil(this.numProjects/this.numberColumns);
+  colCollection = Array(this.numberColumns).fill(0);
+  itemCollection = Array(this.numberItems).fill(0);
 
   constructor() { 
     // 

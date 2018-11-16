@@ -7,11 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  private homeName : string = 'Patrick Hansen' 
-  private linkNames : string[] = ['Home','Projects', 'Publications']; 
-  private linkToggles : boolean[] = [false, true, false];
+  homeName : string = 'Patrick Hansen' 
+  linkNames : string[] = ['Home','Projects', 'Publications']; 
+  linkToggles : boolean[] = [false, true, false];
 
-  private showHamburger : boolean = true;
+  showHamburger : boolean = true;
 
   constructor() {
     // 
