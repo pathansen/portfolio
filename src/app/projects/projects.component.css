@@ -1,0 +1,158 @@
+.title-container {
+    padding: 1%;
+    padding-left: 3%;
+    /* background-color: rgba(255,255,255,0.9); */
+    background: linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.placeholder {
+    height: 200px;
+    /* width: 100px; */
+    width: 100%;
+    /* background-color: #38B4FF; */
+    background-image: url("./../../assets/portfolio_thumbnail.png");
+    /* background-color: rgba(56,180,255,0.25); */
+    background-blend-mode: overlay;
+    background-size: cover;
+    border-style: solid;
+    border-width: 2px;
+    border-color: white; 
+    cursor: pointer;
+}
+
+.placeholder:hover {
+    box-shadow: 0 0 5px #FFFFFF;   
+    /* background-color: gray; */
+    /* outline-style: solid;
+    outline-width: 4px;
+    outline-color: white;  */
+}
+
+#project-row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+#project-column {
+    -ms-flex: 25%; 
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+#project-column div {
+    margin-top: 8px;
+    vertical-align: middle;
+} 
+
+@media screen and (max-width: 800px) {
+    #project-column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #project-column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.project-description {
+    font-family: Titillium Web;
+    /* background-color:black;  */
+    background-color: rgba(50,50,50,0.80);
+    border-style: solid;
+    border-width: 1px;
+    border-color: white; 
+    height: 75%; 
+    width: 95%; 
+    margin: 0 auto; 
+    position: relative; 
+    margin-top:2.5%;
+}
+
+.project-link {
+    font-family: Titillium Web;
+    background-color: rgba(50,50,50,0.80); 
+    min-height: 25%;
+    height: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0;
+    vertical-align: middle;
+    text-align: center; 
+
+    padding-top: 2%;
+    padding-bottom: 2%;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: white; 
+    
+}
+
+.project-link:hover {
+    background-color: #FF5255;
+}
+
+h5 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+}
+.container > div {
+    flex: 1; /*grow*/
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.1); 
+    margin: auto;
+    margin-top: 0;
+}
+
+.modal-content {
+    color: black;
+    background-color: #fefefe;
+    width: 90%; /* Could be more or less, depending on screen size */
+    height: 90%;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    box-shadow: 0px 0px 30px 2px rgba(0,0,0,0.25);
+    overflow: auto;
+
+    /* box-shadow: none; */
+    /* border: 1px solid #888; */
+}
+
+.close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,126 @@
+<div class="title-container">
+  
+  <!-- Responsive Grid -->
+  <div class="responsive-grid" style="width:95%; padding-left:1%;">
+
+    <div class="row" id="project-row">
+      <div *ngFor="let col of colCollection; let i = index" [attr.data-index]="i" class="column" id="project-column">
+        <div *ngFor="let item of itemCollection; let j = index" [attr.data-index]="j" >
+
+          <div *ngIf="isProjectValid(i, j)" class="placeholder">
+            <div class="project-description">
+              <h3 style="text-align: center; margin: 0; position: relative; top: 50%; transform: translateY(-50%)">
+                {{ myProjects["data"][numberColumns*j+i]["project_name"] }}
+              </h3>
+              <h6 style="text-align: center; margin: 0; position: relative; top: 50%; transform: translateY(-50%)">
+                  ({{ myProjects["data"][numberColumns*j+i]["project_language"] }})
+              </h6>
+            </div>
+  
+            <div style="width: 95%; padding: 0; margin-top: 0; margin-left: auto; margin-right: auto;">
+              <div class="project-link" id="repo-link" style="float:left; width:33%">
+                <h5><i class="fa fa-github"></i> Code</h5>
+              </div>
+              <div class="project-link" id="page-link" style="float:left; width:33%; margin-right:0.5%; margin-left:0.5%;">
+                <h5><i class="fa fa-desktop"></i> Page</h5>
+              </div>
+              <div (click)="openModal(numberColumns*j+i)" class="project-link" id="more-button" style="float:left; width:33%">
+                <h5><span class="glyphicon glyphicon-option-horizontal"></span></h5>
+              </div>
+            </div>
+          </div>
+
+          <!-- The Modal -->
+          <div (click)="closeModal()" id="my-modal" class="modal" [ngStyle]="{display: getModalDisplayType()}" style="margin-top:0; ">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+              <span (click)="closeModal()" class="close">&times;</span>
+
+              <div class="responsive-sides" style="width: 100%;margin: auto; margin-top: 15px;">
+                <div class="row" id="desc-row" style="width: 100%; margin: 0;">
+                  <div class="column" id="desc-column">
+                    <div class="desc-side" style="margin-top: 20px; margin-left: auto; margin-right: auto;">
+                      <h2 style="margin-top: 0px;"><b> {{ modalTitle }} </b></h2>
+                      <h5> Written in {{ modalLanguage }} </h5>
+                      <hr>
+                      <h4 style="margin-bottom: 1%;"><i class="fa fa-github"></i> Link to GitHub Repository </h4>
+                      <h4><i class="fa fa-desktop"></i> Link to GitHub Page </h4>
+                      <hr>
+                      <h3>Project Description</h3>
+                      <h4> {{ modalDescription }} </h4> 
+                    </div>
+                  </div>
+                  <div class="column" id="desc-column">
+                    <div class="desc-side" style="margin-top: 20px;">
+                      
+                      <div *ngFor="let image of modalImages; let i = index" [attr.data-index]="i" style="margin-bottom: 25px;">
+                        <figure>
+                          <img src="{{ image }}" alt="Something Went Wrong" style="width: 100%;">
+                          <figcaption> {{ modalCaptions[i] }} </figcaption>
+                        </figure>
+                      </div>
+
+                      <!-- <img src="./../../assets/portfolio_thumbnail.png" alt="WHAT" style="width: 100%;">
+                      <img src="./../../assets/portfolio_thumbnail.png" alt="WHAT" style="width: 100%;">
+                      <img src="./../../assets/portfolio_thumbnail.png" alt="WHAT" style="width: 100%;"> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<style>
+  .desc-side {
+    /* background: rgba(0,255,0,0.25); */
+    width: 100%;
+    /* height: 100%; */
+  }
+
+  #desc-row {
+    display: -ms-flexbox; 
+    display: flex;
+    -ms-flex-wrap: wrap; 
+    flex-wrap: wrap;
+    padding: 0 4px;
+}
+
+#desc-column {
+    -ms-flex: 50%; 
+    flex: 50%;
+    max-width: 50%;
+    padding: 0 4px;
+}
+
+#desc-column div {
+    margin-top: 8px;
+    vertical-align: middle;
+} 
+
+@media screen and (max-width: 800px) {
+    #desc-column {
+        -ms-flex: 50%;
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #desc-column {
+        -ms-flex: 100%;
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+</style>

@@ -1,0 +1,12 @@
+<div class="title-container">
+  <hr>
+  <div *ngFor="let title of titles; let i = index" [attr.data-index]="i">
+    <h5><b>{{ titles[i] }}</b></h5>
+    <h5 sytle="font-style: italic">{{ authors[i] }}</h5>
+    <h5>{{ venues[i] }}</h5>
+    <a href={{paperLinks[i]}} target="_blank">
+      <h5 class="paper-link"><span class="glyphicon glyphicon-file"></span> Link to Paper</h5>
+    </a>
+    <hr>
+  </div>
+</div>

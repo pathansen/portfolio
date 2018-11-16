@@ -1,0 +1,46 @@
+.navbar.navbar-inverse.navbar-fixed-top {
+    background-color: #38B4FF;
+    border-color: #1577B2;
+}
+
+.nav.navbar-nav, .navbar-brand {
+    color: white;
+}
+
+.navbar-toggle.collapsed {
+    background-color: #38B4FF;
+    border: 0;
+}
+
+.link-list {
+    padding-left: 0;
+    /* font-size: 12pt; */
+}
+
+.link-menu {
+    padding: 1%;
+    padding-left: 3%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.25), rgba(0,0,0,0));
+    margin-bottom: 3%;
+    padding-top: 1%;
+    height: 100%;
+}
+
+#menu-icon {
+    font-size: 2em;
+}
+
+#menu-text:hover {
+    cursor: pointer;
+    color: #FF5255;
+    /* text-shadow: 0 0 5px #FF5255;  */
+}
+
+#link-list-item {
+    cursor: pointer;
+    color:white;
+}
+
+#link-list-item:hover {
+    color: #FF5255;
+}
