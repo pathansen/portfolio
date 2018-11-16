@@ -23,7 +23,7 @@ export class ProjectsComponent implements OnInit {
         "project_description": "first description",
         "project_repo_link" : "https://github.com",
         "project_page_link" : "https://github.com",
-        "images": ["./../../assets/portfolio_thumbnail.png", "./../../assets/portfolio_thumbnail.png", "./../../assets/portfolio_thumbnail.png"],
+        "images": ["./assets/portfolio_thumbnail.png"],
         "captions": ["caption 1", "caption 2", "caption 3"]
       }
     ]
